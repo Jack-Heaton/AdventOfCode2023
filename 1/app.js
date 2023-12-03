@@ -27,7 +27,7 @@ xtwone3four
 zoneight234
 7pqrstsixteen`
 
-const input = readFileSync('./one/data.txt').toString();
+const input = readFileSync('./1/data.txt').toString();
 
 function extractNumbers(line, subbed = false) {
 
