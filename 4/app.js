@@ -62,6 +62,16 @@ function scoreCard( s ) {
 
   let part2 = 0;
 
+  console.log(cardMap['52'],
+  cardMap['53'],
+  cardMap['54'],
+  cardMap['55'],
+  cardMap['56'],
+  cardMap['57'],
+  cardMap['58'],
+  cardMap['59'],
+  cardMap['60'],)
+
   for( const m in cardMap) {
 
     const cm = cardMap[m]
@@ -70,6 +80,10 @@ function scoreCard( s ) {
       const card = cm.wonCards.shift();
       cm.expanded.push(card);
       cm.wonCards.push(...cardMap[card].wonCards)
+
+      if( cm.wonCards.length > 0 && cm.wonCards.length % 1000 === 0) {
+        console.log(m, cm.wonCards.length, cm.expanded.length)
+      }
     }
   
     part2 += cm.expanded.length
@@ -79,4 +93,4 @@ function scoreCard( s ) {
 }
 
 console.log(scoreCard(test))
-// console.log(scoreCard(input))
+console.log(scoreCard(input))
